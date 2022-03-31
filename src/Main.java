@@ -71,9 +71,9 @@ public class Main {
     private static <T> T maxValue(List<T> list, Comparator<T> comparator) {
         int size = list.size();
         T max = list.get(0);
-        for (int i = 0; i < size - 1; i++) {
-            if (comparator.compare(list.get(i), list.get(i + 1)) > 0) {
-                max = list.get(i);
+        for (int i = 0; i < size - 2; i++) {
+            if (comparator.compare(list.get(i), list.get(i + 1)) < 0) {
+                max = list.get(i + 1);
             }
         }
         return max;
